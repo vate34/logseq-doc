@@ -1,0 +1,6 @@
+- 对应的[[异步 IO]]
+- 异步 IO 是采用“订阅-通知”模式: 即应用程序向操作系统注册IO监听，然后继续做自己的事情。当操作系统发生 IO 事件，并且准备好数据后，在主动通知应用程序，触发相应的函数:
+- 虽然 NIO 在网络操作中，提供了非阻塞的方法，但是 NIO 的 IO 行为还是同步的。对于 NIO 来说，我们的业务线程是在 IO 操作准备好时，得到通知，接着就由这个线程自行进行 IO 操作，IO操作本身是同步的。
+- ![image.png](../assets/image_1689587450708_0.png)
+- Java AIO 框架使用的是 channel 通道直接到系统订阅监听事件。
+- JAVA AIO框架中，只实现了两种网络IO通道“AsynchronousServerSocketChannel”(服务器监听通道)、“AsynchronousSocketChannel”(socket套接字通道)。但是无论哪种通道他们都有独立的fileDescriptor(文件标识符)、attachment(附件，附件可以使任意对象，类似“通道上下文”)，并被独立的SocketChannelReadHandle类实例引用。
