@@ -1,3 +1,5 @@
+public:: true
+
 - IO 体系
   collapsed:: true
 	- [[Unix的五种IO模型]]

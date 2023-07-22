@@ -418,4 +418,5 @@
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
  :graph/settings {:builtin-pages? false, :orphan-pages? true}
- :journal/page-title-format "yyyy年MM月dd日"}
+ :journal/page-title-format "yyyy年MM月dd日"
+ :publishing/all-pages-public? true}
