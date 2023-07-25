@@ -1,8 +1,7 @@
 - # 静态代理
 - 创建一个接口，然后创建被代理的类实现该接口并且实现该接口中的抽象方法。之后再创建一个代理类，**同时使其也实现这个接口**。在代理类中持有一个被代理对象的引用（聚合方式），而后在代理类方法中调用该对象的方法。
 - 缺点：由于代理只能为一个类服务，如果需要代理的类很多，那么就需要编写大量的代理类，比较繁琐。
-  
-  ```java
+- ```java
   // 接口
   public interface HelloInterface {
     void sayHello();
@@ -33,10 +32,8 @@
         helloProxy.sayHello();
   }
   ```
-- # 动态代理
 - 利用反射机制在运行时创建代理类，要求代理目标必须实现接口。接口、被代理类不变，构建一个 handler 类来实现 InvocationHandler 接口。
-  
-  ```java
+- ```java
   public class ProxyHandler implements InvocationHandler{
     private Object object;
     public ProxyHandler(Object object){
@@ -51,13 +48,12 @@
     }
   }
   ```
-  
-  
   **通过 Proxy 类的静态方法 newProxyInstance 返回一个接口的代理实例**。执行动态代理：
   
   ```java
   public static void main(String[] args) {     
-    System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+   
+  System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
     HelloInterface hello = new Hello();
     InvocationHandler handler = new ProxyHandler(hello);
     HelloInterface proxyHello = (HelloInterface) Proxy.newProxyInstance(hello.getClass().getClassLoader(), hello.getClass().getInterfaces(), handler);
@@ -66,11 +62,11 @@
   ```
 - ## 动态代理实现步骤
 - 1. 委托类
-	- 委托类必须实现自某一接口
+- 委托类必须实现自某一接口
 - 2. 中介类
-	- 中介类必须实现InvocationHandler接口。中介类持有一个委托类对象引用，在 invoke 方法中调用了委托类对象的相应方法，可以看出**中介类与委托类构成了静态代理关系，在这个关系中，中介类是代理类，委托类就是委托类**
+- 中介类必须实现InvocationHandler接口。中介类持有一个委托类对象引用，在 invoke 方法中调用了委托类对象的相应方法，可以看出**中介类与委托类构成了静态代理关系，在这个关系中，中介类是代理类，委托类就是委托类**
 - 3. 动态生成代理类
-	- **调用 Proxy 类的 newProxyInstance 方法来获取一个代理类实例**。这个代理类实现了我们指定的接口并且会把方法调用分发到指定的调用处理器。
+- **调用 Proxy 类的 newProxyInstance 方法来获取一个代理类实例**。这个代理类实现了我们指定的接口并且会把方法调用分发到指定的调用处理器。
 - ```java
   public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h) throws IllegalArgumentException
   ```
@@ -85,7 +81,7 @@
 - [[CGLIB]]
 - CGLIB使用ASM机制实现动态代理，不需要被代理类实现接口。代理类要实现`MethodInterceptor` ，用于方法的拦截；创建代理类实例的`Enhancer` 对象要继承具体的代理对象类，CGLIB是通过继承实现的。
 - 示例：
-  ```java
+- ```java
   import java.lang.reflect.Method;
   import java.util.Date;
   
