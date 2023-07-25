@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["java 基础"]
+ :favorites ["项目相关" "MySQL" "java 基础"]
 
  ;; Set flashcards interval.
  ;; Expected value:

@@ -1,0 +1,24 @@
+- #MySQL
+- #代码片段
+- 从192.168.122.12登陆的用户
+- `create user 'superboy'@'192.168.122.12' identified by 'iamsuperboy';`
+- 从任意ip登陆的用户
+- `create user 'superboy'@'%' identified by 'iamsuperboy';`
+- 不做指定默认为'%'
+- `create user 'superboy' identified by 'iamsuperboy';`
+- 赋予部分权限，其中的shopping.*表示对以shopping所有文件操作。
+- `grant select,delete,update,insert on simpleshop.* to superboy@'localhost' identified by 'superboy';`
+- `flush privileges;`
+- 赋予所有权限
+- `grant all privileges on simpleshop.* to superboy@localhost identified by 'iamsuperboy';`
+- `flush privileges;`
+- 撤销update权限
+- `revoke update on simpleshop.* from superboy@localhost;`
+- 撤销所有权限
+- `revoke all on simpleshop.* from superboy@localhost;`
+- 撤销所有数据的权限
+- `revoke all on . from superboy@'%';`
+- 参考：
+- [MySQL中授权(grant)和撤销授权(revoke)_iwi_ac的博客-CSDN博客](https://blog.csdn.net/u012349696/article/details/77197284)
+- [mysql 创建用户并赋予用户权限_DoneSpeak的博客-CSDN博客_mysql给用户赋予权限](https://blog.csdn.net/DoneSpeak/article/details/55548779)
+-
