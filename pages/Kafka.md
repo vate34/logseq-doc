@@ -10,3 +10,4 @@
 - 为了提高可用性，为每个partition增加若干副本。
 - 使用`ZooKeeper`存储架构分区信息，如Leader信息，2.8之后可以不采用ZK。
 - ![image.png](../assets/image_1690428396078_0.png)
+- [继续学习](https://www.bilibili.com/video/BV1vr4y1677k?p=10)
