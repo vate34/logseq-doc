@@ -1,4 +1,3 @@
-- #MySQL
 - #面试重点
 - 多版本并发控制 (Multi-Version Concurrency Control, `MVCC`) 是 MySQL 的 InnoDB 存储引擎实现隔离级别的一种具体方式，用于**实现提交读和可重复读**这两种隔离级别。
 - 同一条记录在系统中存在多个版本，每个版本都携带有版本号。

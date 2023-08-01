@@ -1,4 +1,3 @@
-- #MySQL
 - #代码片段
 - 从192.168.122.12登陆的用户
 - `create user 'superboy'@'192.168.122.12' identified by 'iamsuperboy';`
