@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["java 基础"]
+ :favorites ["面试" "复习记录" "复习目录" "面试详情" "项目相关" "MySQL" "java 基础"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -417,4 +417,6 @@
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
- :graph/settings {:builtin-pages? false, :orphan-pages? true}}
+ :graph/settings {:builtin-pages? false, :orphan-pages? true}
+ :journal/page-title-format "yyyy年MM月dd日"
+ :publishing/all-pages-public? true}

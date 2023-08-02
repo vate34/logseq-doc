@@ -1,8 +1,11 @@
 - IO 体系
+  collapsed:: true
 	- [[Unix的五种IO模型]]
 	- [[Java IO体系]]
 - [[Java 基础]]
 - #中间件
+	- [[Kafka]]
+	- [[ZooKeeper]]
 - #分布式
 - #多线程
 - #计算机网络
@@ -10,5 +13,5 @@
 - #Spring
 - [[项目相关]]
 - #读书笔记
-- [[面试记录]]
+- #面试
 - {{renderer :tocgen2, *, calc(100vh - 135px)}}
