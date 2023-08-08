@@ -1,0 +1,15 @@
+- # TreeMap
+- TreeMap 不保证元素的先后添加顺序，但是会对集合中的元素做排序操作，底层由有**红黑树算法**实现(树结构,比较擅长做范围查询)。
+- TreeMap 要求必须实现比较器：
+	- 自然比较器：要求集合对象必须实现 `java.lang.Comparable` 接口
+	- 定制比较器：要求在构建对象时，传入一个比较器实现
+- TreeMap 中先是判断定制比较器，然后判断自然比较器。如果两个比较器都实现了，TreeMap 会使用定制比较器进行比较
+- TreeMap由红黑树实现，可以正序也可以逆序；
+- TreeMap不是线程安全的，使用： `Collections.synchronizedSortedMap(new TreeMap(...))`
+- TreeMap中Key不能为 null，Value可以为null；
+- TreeMap中有丰富的导航方法。
+- # LinkedHashMap
+- LinkedHashMap 与 HashMap 最大的不同是，其保证了元素的遍历顺序是与插入顺序一致的。
+- Key 和 Value 都可以为 null
+- 线程不安全
+- 其基本实现为 HashMap 与 LinkedList，以 HashMap 维护数据结构，以双向链表（LinkedList）维护数据插入的顺序。

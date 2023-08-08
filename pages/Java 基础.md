@@ -6,3 +6,4 @@
 - [[接口与抽象类的区别]]
 - [[重载与重写的区别]]
 - [[ArrayList 与 LinkedList的区别]]
+- [[HashMap]]
