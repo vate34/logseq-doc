@@ -1,0 +1,22 @@
+- **Java 中有 8 个基本类型，分别对应的 8 个包装类**
+	- byte -- Byte
+	- boolean -- Boolean
+	- short -- Short
+	- char -- Character
+	- int -- Integer
+	- long -- Long
+	- float -- Float
+	- double -- Double
+- **为什么需要包装类**:
+	- 基本数据类型方便、简单、高效，但泛型不支持、集合元素不支持
+	- 不符合面向对象思维
+	- 包装类提供很多方法，方便使用，如 Integer 类 toHexString(int i)、parseInt(String s) 方法等等
+- **一些题目**
+- 数字缓存问题：
+  logseq.order-list-type:: number
+	- Integer a = 1000，Integer b = 1000，a==b 结果为**false**
+	- Integer a = 1，Integer b = 1，a==b 结果为**true**
+	- 这道题主要考察 Integer 包装类缓存的范围,**在-128~127之间会缓存起来**,比较的是直接缓存的数据,在此之外比较的是对象
+- 字符串比较与常量池问题
+  logseq.order-list-type:: number
+	- [[Java 字符串比较与常量池]]
