@@ -3,4 +3,7 @@
 - [[MySQL 的 Change Buffer]]
 - [[MySQL 新建用户相关命令]]
 - [[《从根儿上理解 MySQL》读书笔记]]
--
+- [[MySQL 索引]]
+- [[MySQL 分库分表]]
+- [[数据库的事务隔离级别]]
+- [[MySQL 的日志系统]]

@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["算法复习" "复习记录" "面试" "复习目录" "MySQL" "java 基础"]
+ :favorites ["面试详情" "简历" "算法复习" "复习记录" "复习目录" "MySQL" "java 基础"]
 
  ;; Set flashcards interval.
  ;; Expected value:
