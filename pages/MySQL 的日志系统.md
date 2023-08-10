@@ -13,6 +13,7 @@
 - `redo log`是`InnoDB`存储引擎独有的，给予了MySQL崩溃恢复的能力，**保证了数据的持久性和完整性**。
 - `redo log`包括两部分：一个是内存中的日志缓冲(`redo log buffer`)，另一个是磁盘上的日志文件(`redo log file`)。`mysql`每执行一条`DML`语句，先将记录写入`redo log buffer`，后续某个时间点再一次性将多个操作记录写到`redo log file`。这种**先写日志，再写磁盘**的技术就是`MySQL`里经常说到的`WAL(Write-Ahead Logging)` 技术。
 - `redo log buffer`刷写道磁盘的时机默认为：每次事务提交时都将进行刷盘操作。但是也有后台线程每隔一秒将其刷入到磁盘中。
+  id:: 64d49161-e6b5-4e40-b559-89e53346e685
 - ![image.png](../assets/image_1691653720115_0.png)
 - ## 记录形式
 - redo log在磁盘中是以小组的形式存在的，整个文件小组大小固定，循环写入，当写入到结尾的时候，会回到开头循环写日志。

@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["面试" "复习记录" "复习目录" "面试详情" "项目相关" "MySQL" "java 基础"]
+ :favorites ["Redis与MySQL双写一致性如何保证" "面试详情" "算法复习" "复习记录" "面试记录" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:
