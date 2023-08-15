@@ -1,4 +1,3 @@
-- #Spring
 - [Java面试题：浅谈Spring Bean的生命周期](https://www.cnblogs.com/east7/p/14563676.html)
 - 1. 实例化 Instantiation
 - 2. 属性赋值 Populate

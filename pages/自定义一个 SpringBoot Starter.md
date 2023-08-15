@@ -1,4 +1,3 @@
-- #Spring
 - SpringBoot Starter生效的原理
 	- 1. pom.xml 文件中指定了所需 jar 包的包名与版本号
 	- 2. resource/META-INF下的 spring.factories 文件中声明所需的配置类

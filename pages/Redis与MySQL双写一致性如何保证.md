@@ -48,3 +48,30 @@
 -
 - # 旁路缓存下的一致性问题分析
 - https://segmentfault.com/a/1190000041998615
+- 最优写方案为：**先更新数据库，再删除缓存**
+- 一致性解决方案：
+- **缓存延时双删**：如果采取先删除缓存再更新数据的方案，以保证读请求的脏数据也被删除掉。
+  logseq.order-list-type:: number
+	- 先删除缓存
+	  logseq.order-list-type:: number
+	- 写数据库
+	  logseq.order-list-type:: number
+	- 休眠500毫秒，再删除缓存
+	  logseq.order-list-type:: number
+	- **延迟时间的目的就是确保读请求结束，写请求可以删除读请求造成的缓存脏数据。**
+- **删除缓存重试机制**：为了避免缓存缓存删除失败，可以加入重试机制，再高并发场景下最好使用异步方式。
+  logseq.order-list-type:: number
+- **读取`binlog`异步删除**。对数据库的更新操作都会记录在binlog中，可以通过订阅binlog修改来更新删除缓存。
+  logseq.order-list-type:: number
+	- 更新数据库；
+	  logseq.order-list-type:: number
+	- 数据库会把操作信息记录在 binlog 日志中；
+	  logseq.order-list-type:: number
+	- 使用 canal 订阅 binlog 日志获取目标数据和 key；
+	  logseq.order-list-type:: number
+	- 缓存删除系统获取 canal 的数据，解析目标 key，尝试删除缓存。
+	  logseq.order-list-type:: number
+	- 如果删除失败则将消息发送到消息队列；
+	  logseq.order-list-type:: number
+	- 缓存删除系统重新从消息队列获取数据，再次执行删除操作。
+	  logseq.order-list-type:: number

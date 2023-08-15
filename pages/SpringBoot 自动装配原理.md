@@ -1,5 +1,4 @@
-- #SpringBoot
-- @SpringBootApplication这个注解是一个组合注解
+- **@SpringBootApplication**这个注解是一个组合注解
 - # @SpringBootConfiguration
 - 这个注解就写带了一个@Configuration，表明自己是一个Spring的配置类
 - # @ComponentScan
