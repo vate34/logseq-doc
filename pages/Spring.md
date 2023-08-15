@@ -1,8 +1,10 @@
-- [[SpringBoot]]
+- SpringBoot
 	- [[SpringBoot 自动装配原理]]
 	- [[自定义一个 SpringBoot Starter]]
-	- [[SpringBoot 自动装配原理]]
-- [[Spring Cloud]]
+	- [[SpringBoot 的循环依赖问题]]
+	- [[SpringBoot 判断启动环境配置]]
+- Spring Cloud
+	- [[Spring Cloud Gateway 与 Zuul 比较]]
 - [[Spring Bean的生命周期]]
 - [[Spring 的三级缓存]]
 - [[Spring 的 IOC 与 AOP]]

@@ -1,4 +1,6 @@
 - [[Java 基础]]
+	- [[JVM]]
+		- [[JVM 垃圾回收]]
 - [[中间件]]
 	- [[Kafka]]
 	- [[ZooKeeper]]
@@ -26,3 +28,5 @@
 	- [[ZooKeeper Leader选举机制]]
 	- [[MySQL 多版本并发控制]]
 	- [[数据库四种隔离级别]]
+	- [[synchronized 锁]]
+	- [[类的加载机制]]

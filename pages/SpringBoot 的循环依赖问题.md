@@ -1,5 +1,4 @@
-- #SpringBoot
-- # 循环依赖
+# 循环依赖
 - 两个 Bean 循环依赖，以及间接依赖导致的循环依赖。SpringBoot （从2.6版本开始）启动时将抛出异常 BeanCurrentlyInCreationException。field 注入和构造器注入都会导致这个问题。
 - # 解决
 	- 1. 重新设计，解耦
