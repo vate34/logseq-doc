@@ -1,4 +1,3 @@
-- #计算机网络
 # 常用命令
 
 ```other
@@ -13,21 +12,21 @@ nginx -s reopen
 #测试配置文件
 nginx -t
 ```
-# 配置文件示例
-
-```other
-http {
-server { #虚拟主机
-    listen       80; #监听端口
-    server_name  localhost; #
-
-    location / {
-        root   /usr/share/nginx/html; #根目录
-        index  index.html index.htm; #首页
-    }
-}
-}
-```
+- # 配置文件示例
+  
+  ```other
+  http {
+  server { #虚拟主机
+      listen       80; #监听端口
+      server_name  localhost; #
+  
+      location / {
+          root   /usr/share/nginx/html; #根目录
+          index  index.html index.htm; #首页
+      }
+  }
+  }
+  ```
 - ## [[server各字段的配置]]
 - # 反向代理
 - 配置文件示例：
