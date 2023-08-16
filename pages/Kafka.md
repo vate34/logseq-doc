@@ -21,7 +21,8 @@
 	- 使用`selector`发送数据，并获取应答情况，清理数据或重试
 - ![image.png](../assets/image_1690962216966_0.png){:height 406, :width 708}
 - ## 分区的好处
-	- 合理使用资源。可以将海量的数据按照分区切割成不同的块，存储在堕胎`Broker`上，实现负载均衡的效果。
+  id:: 64ca0985-b49f-422d-87c9-f935246c1174
+	- 合理使用资源。可以将海量的数据按照分区切割成不同的块，存储在多台 `Broker` 上，实现负载均衡的效果。
 	  logseq.order-list-type:: number
 	- 提高并行度。生产者可以以分区为单位发送数据，消费者可以以分区为单位消费数据。
 	  logseq.order-list-type:: number
