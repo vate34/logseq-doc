@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["Redis与MySQL双写一致性如何保证" "面试详情" "算法复习" "复习记录" "面试记录" "复习目录"]
+ :favorites ["算法复习" "复习记录" "面试记录" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -417,6 +417,6 @@
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
- :graph/settings {:builtin-pages? false, :orphan-pages? true}
+ :graph/settings {:builtin-pages? true, :orphan-pages? true}
  :journal/page-title-format "yyyy年MM月dd日"
  :publishing/all-pages-public? true}

@@ -1,7 +1,7 @@
 - [[Java 基础]]
 	- [[JVM]]
 		- [[JVM 垃圾回收]]
-- [[中间件]]
+- 中间件
 	- [[Kafka]]
 	- [[ZooKeeper]]
 - [[分布式]]
@@ -14,6 +14,7 @@
 - [[Redis]]
 - [[Spring]]
 - IO 体系
+  collapsed:: true
 	- [[Unix的五种IO模型]]
 	- [[Java IO体系]]
 - 读书笔记
