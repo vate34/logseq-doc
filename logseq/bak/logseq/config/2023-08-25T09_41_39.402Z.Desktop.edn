@@ -10,7 +10,7 @@
  ;; Available options:
  ;; - :now for NOW/LATER style (default)
  ;; - :todo for TODO/DOING style
- :preferred-workflow :now
+ :preferred-workflow :todo
 
  ;; Exclude directories/files.
  ;; Example usage:
@@ -419,4 +419,5 @@
  :editor/logical-outdenting? true
  :graph/settings {:builtin-pages? false, :orphan-pages? true}
  :journal/page-title-format "yyyy年MM月dd日"
- :publishing/all-pages-public? true}
+ :publishing/all-pages-public? true
+ :ui/show-brackets? false}
