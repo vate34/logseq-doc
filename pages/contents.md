@@ -32,4 +32,4 @@
 		- [[数据库四种隔离级别]]
 		- [[synchronized 锁]]
 		- [[类的加载机制]]
--
+- {{query (and (task TODO DOING) (not [[算法复习]]))}}
