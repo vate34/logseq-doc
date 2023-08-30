@@ -413,11 +413,11 @@
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
  :feature/enable-journals? true
- :default-home {:page "contents"}
+ :default-home {}
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
  :graph/settings {:builtin-pages? false, :orphan-pages? true}
- :journal/page-title-format "yyyy年MM月dd日"
+ :journal/page-title-format "yyyy-MM-dd"
  :publishing/all-pages-public? true
  :ui/show-brackets? false}
