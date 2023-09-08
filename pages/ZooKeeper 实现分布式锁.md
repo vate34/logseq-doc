@@ -1,4 +1,3 @@
-- #分布式锁
 - 可以使用ZooKeeper的原生代码和 [**Curator**](https://curator.apache.org/)来实现分布式锁，其基本原理都是一样的。使用Curator框架降低了编码的复杂度。
 - 特点：公平锁，可重入
 - **基本原理：**

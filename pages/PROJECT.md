@@ -1,3 +1,5 @@
+- {{query (and (task NOW DOING TODO) (not (page [[算法复习]])))}}
+- ---
 - [[2023 找工作]]
 - [[2023 更换城市]]
 - ----
