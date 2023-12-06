@@ -1,4 +1,4 @@
-- # 底层数据结构
+# 底层数据结构
 - Java 的 HashMap是用链地址法（拉链法）构造的。
 - JDK 7 中，HashMap 由“**数组+链表**”组成，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的。
 - 在 JDK 8 中，HashMap 由“**数组+链表+红黑树**”组成。
@@ -38,7 +38,7 @@
 			  logseq.order-list-type:: number
 - 判断实际存在的键值对数量size是否超多了最大容量`threshold`，如果超过，进行扩容。
   logseq.order-list-type:: number
-- ![hashmap-interview-03.png](../assets/hashmap-interview-03_1691463852092_0.png){:height 601, :width 557}
+- ![hashmap-interview-03.png](../assets/hashmap-interview-03_1691463852092_0.png){:height 590, :width 557}
 - # 扩容机制
 - 扩容`resize`即，数组键值对数量`size`超过了最大容量临界值`THRESHOLD = INITIAL_CAPACITY * LOAD_FACTOR`（临界值 = 容量 * 加载因子）时，数组扩充，节点迁移的过程。
 - 加载因子为0.75原因：分布频率符合柏松分布；容量为2的n次幂，乘积为整数。

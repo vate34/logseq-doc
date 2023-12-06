@@ -1,5 +1,7 @@
 - PARA
 	- [[PROJECT]]
 	- [[AREA]]
+		- [[计算机知识]]
+		- [[生活]]
 	- [[RESOURCE]]
 	- [[ARCHIVE]]

@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["2023 找工作" "算法复习" "面试记录" "复习目录"]
+ :favorites ["Contents" "2023 找工作" "算法复习" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -412,8 +412,8 @@
  ;;      ;use triple underscore `___` for slash `/` in page title
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
- :feature/enable-journals? true
- :default-home {}
+ :feature/enable-journals? false
+ :default-home {:page "Contents"}
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
