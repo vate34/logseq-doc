@@ -38,7 +38,7 @@
 
  ;; Enable tooltip preview on hover.
  ;; Default value: true
- :ui/enable-tooltip? false
+ :ui/enable-tooltip? true
 
  ;; Display brackets [[]] around page references.
  ;; Default value: true
@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["PARA 分类法的使用" "2023 找工作" "算法复习" "复习目录"]
+ :favorites ["2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:

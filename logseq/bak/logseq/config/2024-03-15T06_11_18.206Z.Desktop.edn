@@ -50,7 +50,7 @@
 
  ;; Automatically expand block references when zooming in.
  ;; Default value: true
- :ui/auto-expand-block-refs? true
+ :ui/auto-expand-block-refs? false
 
  ;; Enable Block timestamps.
  ;; Default value: false
@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["Contents" "2023 找工作" "算法复习" "复习目录"]
+ :favorites ["Contents" "2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -417,7 +417,8 @@
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
- :graph/settings {:builtin-pages? false, :orphan-pages? true}
+ :graph/settings {:builtin-pages? true
+ :orphan-pages? true}
  :journal/page-title-format "yyyy-MM-dd"
  :publishing/all-pages-public? true
  :ui/show-brackets? false
