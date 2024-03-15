@@ -1,7 +1,21 @@
-- PARA
-	- [[PROJECT]]
-	- [[AREA]]
-		- [[计算机知识]]
-		- [[生活]]
-	- [[RESOURCE]]
-	- [[ARCHIVE]]
+## Java
+	- [[Java 基础]]
+	- [[JVM]]
+	- [[Spring]]
+- ## 中间件
+	- [[Kafka]]
+	- [[ZooKeeper]]
+- ## 分布式
+	- [[分布式锁]]
+	- [[注册中心]]
+	- [[Kafka]]
+- ## [[多线程]]
+- ## [[计算机网络]]
+	- [[Cookie、Session和Token]]
+- ## 数据库
+	- [[MySQL]]
+	- [[Redis]]
+- # 其他
+	- [[设计模式]]
+	- [[IO 体系]]
+- ## [[读书笔记]]
