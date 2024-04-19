@@ -1,4 +1,4 @@
-- {{renderer :tocgen2, *}}
+- {{renderer :tocgen2, *, auto}}
 - Project
 	- [[2023&2024 找工作]]
 	- [[算法复习]]

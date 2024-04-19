@@ -1,5 +1,7 @@
-- [Java面试题：浅谈Spring Bean的生命周期](https://www.cnblogs.com/east7/p/14563676.html)
 - 1. 实例化 Instantiation
+	- 简单理解为 new 了一个对象，对应方法：`AbstractAutowireCapableBeanFactory`中的`createBeanInstance` 方法
 - 2. 属性赋值 Populate
+	- 为实例化出来的对象填充属性，对应方法为：`AbstractAutowireCapableBeanFactory`的`populateBean`方法
 - 3. 初始化 Initialization
+	- 初始化方法，完成 AOP 代理，对应方法为：`AbstractAutowireCapableBeanFactory`的`initializeBean` 方法
 - 4. 销毁 Destruction

@@ -1,10 +1,10 @@
 - **@SpringBootApplication**这个注解是一个组合注解
-- # @SpringBootConfiguration
-- 这个注解就写带了一个@Configuration，表明自己是一个Spring的配置类
-- # @ComponentScan
-- 扫描组件
-- # @EnableAutoConfiguration
-	- ## @AutoConfigurationPackage
-	- 里边有一个 @Import(Registrar.class)，作用是主配置类所在的包以及所有子包的组件扫描加载到Spring容器中
-	- ## @Import({AutoConfigurationImportSelector.class})
-	- `AutoConfigurationImportSelector` 的 `selectImports` 方法会从所有Spring Boot Starter的 `META-INF/spring.factories` 获取到配置类并导入到容器中
+- 1. @SpringBootConfiguration
+	- 这个注解就写带了一个@Configuration，表明自己是一个Spring的配置类
+- 2. @ComponentScan
+	- 扫描组件
+- 3. @EnableAutoConfiguration
+	- a. @AutoConfigurationPackage
+		- 里边有一个 @Import(Registrar.class)，作用是主配置类所在的包以及所有子包的组件扫描加载到Spring容器中
+	- b. @Import({AutoConfigurationImportSelector.class})
+		- `AutoConfigurationImportSelector` 的 `selectImports` 方法会从所有Spring Boot Starter的 `META-INF/spring.factories` 获取到配置类并导入到容器中
