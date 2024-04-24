@@ -5,7 +5,6 @@
 	- [[SpringBoot 判断启动环境配置]]
 - Spring Cloud
 	- [[Spring Cloud Gateway 与 Zuul 比较]]
-- [[Spring Bean的生命周期]]
 - [[Spring 的三级缓存与循环依赖]]
 - [[Spring 的事务传播机制]]
 - [[Spring 的 IOC 与 AOP]]

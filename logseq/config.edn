@@ -418,7 +418,8 @@
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
  :graph/settings {:builtin-pages? false
- :orphan-pages? true}
+ :orphan-pages? true
+ :excluded-pages? true}
  :journal/page-title-format "yyyy-MM-dd"
  :publishing/all-pages-public? true
  :ui/show-brackets? false

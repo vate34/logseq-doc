@@ -38,7 +38,7 @@
 
  ;; Enable tooltip preview on hover.
  ;; Default value: true
- :ui/enable-tooltip? true
+ :ui/enable-tooltip? false
 
  ;; Display brackets [[]] around page references.
  ;; Default value: true
@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
+ :favorites ["Contents" "2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:
@@ -417,7 +417,9 @@
  :feature/enable-whiteboards? false
  :feature/enable-flashcards? false
  :editor/logical-outdenting? true
- :graph/settings {:builtin-pages? false, :orphan-pages? true}
+ :graph/settings {:builtin-pages? false
+ :orphan-pages? true
+ :excluded-pages? false}
  :journal/page-title-format "yyyy-MM-dd"
  :publishing/all-pages-public? true
  :ui/show-brackets? false
