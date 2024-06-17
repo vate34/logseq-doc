@@ -77,62 +77,62 @@
 			- h：调用处理器
 	- ## 实际调用过程
 		- **首先通过 newProxyInstance 方法获取代理类实例，而后我们便可以通过这个代理类实例调用代理类的方法，对代理类的方法的调用实际上都会调用中介类 (调用处理器) 的 invoke 方法，在 invoke 方法中我们调用委托类的相应方法，并且可以添加自己的处理逻辑。**
-	- Java 动态代理其实内部是通过 Java 反射机制来实现的。
-- ### CGLIB动态代理
-	- [[CGLIB]]
-	- CGLIB使用ASM机制实现动态代理，不需要被代理类实现接口。代理类要实现`MethodInterceptor` ，用于方法的拦截；创建代理类实例的`Enhancer` 对象要继承具体的代理对象类，CGLIB是通过继承实现的。
-	- 示例：
-	  ```java
-	  import java.lang.reflect.Method;
-	  import java.util.Date;
-	  
-	  public class LogInterceptor implements MethodInterceptor {
-	    /**
-	     * @param object 表示要进行增强的对象
-	     * @param method 表示拦截的方法
-	     * @param objects 数组表示参数列表，基本数据类型需要传入其包装类型，如int-->Integer、long-Long、double-->Double
-	     * @param methodProxy 表示对方法的代理，invokeSuper方法表示对被代理对象方法的调用
-	     * @return 执行结果
-	     * @throws Throwable
-	     */
-	    @Override
-	    public Object intercept(Object object, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-	        before();
-	        Object result = methodProxy.invokeSuper(object, objects);   // 注意这里是调用 invokeSuper 而不是 invoke，否则死循环，methodProxy.invokesuper执行的是原始类的方法，method.invoke执行的是子类的方法
-	        after();
-	        return result;
-	    }
-	    private void before() {
-	        System.out.println(String.format("log start time [%s] ", new Date()));
-	    }
-	    private void after() {
-	        System.out.println(String.format("log end time [%s] ", new Date()));
-	    }
-	  }
-	  import net.sf.cglib.proxy.Enhancer;
-	  
-	  public class CglibTest {
-	    public static void main(String[] args) {
-	        LogInterceptor daoProxy = new LogInterceptor(); 
-	        Enhancer enhancer = new Enhancer();
-	        enhancer.setSuperclass(Dao.class);  // 设置超类，cglib是通过继承来实现的
-	        enhancer.setCallback(daoProxy);
-	        // 可以设置多个拦截器  
-	        // enhancer.setCallbacks(new Callback[]{logInterceptor, logInterceptor2, NoOp.INSTANCE});
-	        // 也可以设置回调过滤器
-	        // enhancer.setCallbackFilter(new DaoFilter());
-	  
-	        Dao dao = (Dao)enhancer.create();   // 创建代理类
-	        dao.update();
-	        dao.select();
-	    }
-	  }
-	  ```
-	- CGLIB 创建动态代理类的模式是：
-		- 1. 查找目标类上的所有非final 的public类型的方法定义；
-		- 2. 将这些方法的定义转换成字节码；
-		- 3. 将组成的字节码转换成相应的代理的class对象；
-		- 4. 实现 MethodInterceptor接口，用来处理对代理类上所有方法的请求
+		- Java 动态代理其实内部是通过 Java 反射机制来实现的。
+	- ## CGLIB动态代理
+		- [[CGLIB]]
+		- CGLIB使用ASM机制实现动态代理，不需要被代理类实现接口。代理类要实现`MethodInterceptor` ，用于方法的拦截；创建代理类实例的`Enhancer` 对象要继承具体的代理对象类，CGLIB是通过继承实现的。
+		- 示例：
+		  ```java
+		  import java.lang.reflect.Method;
+		  import java.util.Date;
+		  
+		  public class LogInterceptor implements MethodInterceptor {
+		    /**
+		     * @param object 表示要进行增强的对象
+		     * @param method 表示拦截的方法
+		     * @param objects 数组表示参数列表，基本数据类型需要传入其包装类型，如int-->Integer、long-Long、double-->Double
+		     * @param methodProxy 表示对方法的代理，invokeSuper方法表示对被代理对象方法的调用
+		     * @return 执行结果
+		     * @throws Throwable
+		     */
+		    @Override
+		    public Object intercept(Object object, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+		        before();
+		        Object result = methodProxy.invokeSuper(object, objects);   // 注意这里是调用 invokeSuper 而不是 invoke，否则死循环，methodProxy.invokesuper执行的是原始类的方法，method.invoke执行的是子类的方法
+		        after();
+		        return result;
+		    }
+		    private void before() {
+		        System.out.println(String.format("log start time [%s] ", new Date()));
+		    }
+		    private void after() {
+		        System.out.println(String.format("log end time [%s] ", new Date()));
+		    }
+		  }
+		  import net.sf.cglib.proxy.Enhancer;
+		  
+		  public class CglibTest {
+		    public static void main(String[] args) {
+		        LogInterceptor daoProxy = new LogInterceptor(); 
+		        Enhancer enhancer = new Enhancer();
+		        enhancer.setSuperclass(Dao.class);  // 设置超类，cglib是通过继承来实现的
+		        enhancer.setCallback(daoProxy);
+		        // 可以设置多个拦截器  
+		        // enhancer.setCallbacks(new Callback[]{logInterceptor, logInterceptor2, NoOp.INSTANCE});
+		        // 也可以设置回调过滤器
+		        // enhancer.setCallbackFilter(new DaoFilter());
+		  
+		        Dao dao = (Dao)enhancer.create();   // 创建代理类
+		        dao.update();
+		        dao.select();
+		    }
+		  }
+		  ```
+		- CGLIB 创建动态代理类的模式是：
+			- 1. 查找目标类上的所有非final 的public类型的方法定义；
+			- 2. 将这些方法的定义转换成字节码；
+			- 3. 将组成的字节码转换成相应的代理的class对象；
+			- 4. 实现 MethodInterceptor接口，用来处理对代理类上所有方法的请求
 - # JDK动态代理与CGLIB动态代理对比
-- JDK动态代理：基于Java反射机制实现，必须要实现了接口的业务类才能用这种办法生成代理对象。缺点是业务类必须实现自接口。
-- CGLIB动态代理：基于ASM机制实现，通过生成业务类的子类作为代理类。缺点是对于final方法无法代理。
+	- JDK动态代理：基于Java反射机制实现，必须要实现了接口的业务类才能用这种办法生成代理对象。缺点是业务类必须实现自接口。
+	- CGLIB动态代理：基于ASM机制实现，通过生成业务类的子类作为代理类。缺点是对于final方法无法代理。

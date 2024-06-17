@@ -1,4 +1,10 @@
-## Spring Bean 实例化过程
+## Spring Bean 的作用域
+	- `singleton` : 唯一 bean 实例，Spring 中的 bean 默认都是单例的。
+	- `prototype` : 每次请求都会创建一个新的 bean 实例。
+	- `request` : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。
+	- `session` : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效。
+	- `global-session`： 全局 session 作用域，仅仅在基于 Portlet 的 web 应用中才有意义，Spring5 已经没有了。Portlet 是能够生成语义代码（例如：HTML）片段的小型 Java Web 插件。它们基于 portlet 容器，可以像 servlet 一样处理 HTTP 请求。但是，与 servlet 不同，每个 portlet 都有不同的会话。
+- ## Spring Bean 实例化过程
 	- Spring 创建 Bean 的过程分为三个步骤：
 		- 1. 实例化 Instantiation
 			- 简单理解为 new 了一个对象，对应方法：`AbstractAutowireCapableBeanFactory`中的`createBeanInstance` 方法
