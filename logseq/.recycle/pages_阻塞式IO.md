@@ -1,3 +1,3 @@
 - 应用程序调用一个IO函数（recvfrom），导致应用程序阻塞，如果数据已经准备好，从内核拷贝到用户空间，否则一直等待下去。
 - 阻塞式 IO 的特点是在 IO 执行的两个阶段都被阻塞了
-- ![image.png](../assets/image_1689586861484_0.png)
+- ![image.png](../assets/image_1689586861484_0.png){:height 399, :width 665}

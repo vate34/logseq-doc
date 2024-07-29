@@ -77,7 +77,7 @@
 	- **Extra**
 		- `Using filesort`：当 Extra 中有 `Using filesort` 时, 表示 MySQL 需额外的排序操作, 不能通过索引顺序达到排序效果. 一般有 `Using filesort`, 都建议优化去掉, 因为这样的查询 CPU 资源消耗大.
 		- `Using index`："覆盖索引扫描", 表示查询在索引树中就可查找所需数据, 不用扫描表数据文件, 往往说明性能不错
-		- `Using temporary`：查询有使用临时表, 一般出现于排序, 分组和多表 join 的情况, 查询效率不高, 建议优化.
+		- `Using temporary`：查询有使用临时表, 一般出现于排序, 分组和多表 join 的情况, 查询效率不高, 建议优化
 - ## 常见优化措施
   id:: 64e960c6-21a8-4575-a062-b1a3eecb5ad4
 	- 尽量避免 `select *`，只查询必要的列

@@ -1,4 +1,31 @@
-- [[Unix的五种IO模型]]
-- [[Java IO体系]]
+## [[Unix的五种IO模型]]
+- ## Java IO体系
+	- Java IO 流可以通过多个角度划分：
+		- 数据流向：
+			- 输入流（Input Stream）：从源（如文件、网络等）读取数据到程序。
+			- 输出流（Output Stream）：将数据从程序写出到目的地（如文件、网络、控制台等）。
+		- 处理数据单位：
+			- 字节流（Byte Streams）：以字节为单位读写数据，主要用于处理二进制数据，如音频、图像文件等。字节流读取的基本单位为字节，采用的是 `ASCII` 编码，通常用来处理二进制数据，其顶层抽象类为 `InputStream` 和 `OutputStream`。字节流默认不使用缓冲区。
+			- 字符流（Character Streams）：以字符为单位读写数据，主要用于处理文本数据。字符流通常用来处理文本数据，其顶层抽象类为 `Reader` 和 `Write`。字符流默认使用缓冲区。
+		- 按功能划分：
+			- 节点流（Node Streams）：直接与数据源或目的地相连，如 FileInputStream、FileOutputStream。
+			- 处理流（Processing Streams）：对一个已存在的流进行包装，如缓冲流 BufferedInputStream、BufferedOutputStream。
+			- 管道流（Piped Streams）：用于线程之间的数据传输，如 PipedInputStream、PipedOutputStream。
+	- ## Java IO 模型
+		- ### Java BIO
+			- 属于 ((66a70bcc-d3ac-4c4d-8b44-786d917e4727))。
+			- 传统的 IO 模型，基于字节流或字符流（如 FileInputStream、BufferedReader 等）进行文件读写，基于 Socket 和 ServerSocket 进行网络通信。
+			- 每个读写都需要创建独立的线程来处理。
+			- API 位于 `java.io`包下。
+		- ### Java NIO
+			- 属于 ((66a70caf-18a8-4097-a749-73a7c94c65db))。
+			- 拥有三大核心：channel（通道）、buffer（缓冲区）、selector（选择器）。
+			- NIO 基于 channel 和 buffer 进行操作，数据总是 channel 都读取到buffer，或者从 buffer 写入到 channel 中。selector 用于监听多个channel 的事件。
+			- API 位于`java.nio`包下。
+		- ### Java AIO
+			- 属于 ((64e960c6-32d3-4da1-8b21-e0c6c9546a4e))。
+			- 引入了异步通道的概念，使得 IO 操作可以异步进行。
+			- 不同于 NIO 的 IO 操作仍然是同步的，AIO 框架使用的是 channel 直接订阅系统监听事件。
+			- API 位于 `java.nio.channels`包下。
 - [[NIO 实现群聊系统]]
 - [[零拷贝]]

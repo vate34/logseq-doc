@@ -11,7 +11,7 @@
 	  logseq.order-list-type:: number
 	- **多线程操作会引入锁**，以及线程切换等功能，会消耗CPU
 	  logseq.order-list-type:: number
-	- 单线程的核心是使用了[[IO多路复用模型]]，采用多路 I/O 复用技术可以让单个线程高效的处理多个连接请求(尽量减少网络 I/O 的时间消耗)
+	- 单线程的核心是使用了 ((66a70caf-18a8-4097-a749-73a7c94c65db)) ，采用多路 I/O 复用技术可以让单个线程高效的处理多个连接请求(尽量减少网络 I/O 的时间消耗)
 	  logseq.order-list-type:: number
 	- 多线程：也有可以异步处理的删除操作，用于避免删除数据消耗了不必要的时间
 	  logseq.order-list-type:: number

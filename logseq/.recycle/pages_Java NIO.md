@@ -61,7 +61,7 @@
 	  ```
 	- NIO 还提供了一个可以直接访问物理内存的类 `DirectBuffer`。普通的 `Buffer` 分配的是 JVM 堆内存，而 `DirectBuffer` 是直接分配物理内存。
 - # Selector(选择器)
-	- NIO 被称为非阻塞式 IO，因为其非阻塞性特征被广泛使用。而 Selector 是其基础，用于检查一个或多个 Channel 的状态是否可读写。NIO 实现了 [[IO多路复用模型]] 的 Reactor 模型：
+	- NIO 被称为非阻塞式 IO，因为其非阻塞性特征被广泛使用。而 Selector 是其基础，用于检查一个或多个 Channel 的状态是否可读写。NIO 实现了 ((66a70caf-18a8-4097-a749-73a7c94c65db)) 的 Reactor 模型：
 		- 一个线程（`Thread`）使用一个**Selector 通过轮询的方式去监听多个 Channel 上的事件（`accpet`、`read`）**，如果某个 `Channel` 上面发生监听事件，这个 `Channel` 就处于就绪状态，然后进行 I/O 操作。
 		- 通过**配置监听的 `Channel` 为非阻塞**，那么当 `Channel` 上的 IO 事件还未到达时，就不会进入阻塞状态一直等待，而是继续轮询其它 `Channel`，找到 IO 事件已经到达的 `Channel` 执行。
 		- 因为创建和切换线程的开销很大，因此使用**一个线程来处理多个事件**而不是一个线程处理一个事件具有更好的性能。
