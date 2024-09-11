@@ -75,7 +75,7 @@
 				  logseq.order-list-type:: number
 				- 每当一个任务线程执行完毕，就将计数器减 1 （`countdownlatch.countDown()`）
 				  logseq.order-list-type:: number
-				- 当计数器的值变为 0 时，在 `CountDownLatch 上 await()` 的线程就会被唤醒。
+				- 当计数器的值变为 0 时，在 `CountDownLatch` 上 `await()` 的线程就会被唤醒。
 				  logseq.order-list-type:: number
 				- 一个典型应用场景就是启动一个服务时，主线程需要等待多个组件加载完毕，之后再继续执行。
 				  logseq.order-list-type:: number

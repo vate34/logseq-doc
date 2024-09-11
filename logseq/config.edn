@@ -292,7 +292,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["Contents" "2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
+ :favorites ["20240820 赢时胜二面" "Contents" "2023&2024 找工作" "2023 找工作" "算法复习" "复习目录"]
 
  ;; Set flashcards interval.
  ;; Expected value:

@@ -5,7 +5,10 @@
 	- [[SpringBoot 判断启动环境配置]]
 - Spring Cloud
 	- [[Spring Cloud Gateway 与 Zuul 比较]]
+	- [[Spring Cloud 核心组件]]
+	- [[SpringBoot 与 Spring Cloud的关系]]
+	- [[Spring Cloud 和 Dubbo的区别]]
 - [[Spring 的三级缓存与循环依赖]]
-- [[Spring 的事务传播机制]]
+- [[Spring 的事务]]
 - [[Spring 的 IOC 与 AOP]]
 - [[Spring @AutoWired多种方式的依赖注入]]

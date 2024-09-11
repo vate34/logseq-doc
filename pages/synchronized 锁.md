@@ -1,4 +1,5 @@
-# 作用
+- 属于独占式的悲观锁，同时也属于可重入锁。
+- ## 作用
 	- 原子性：被synchronized修饰的类或对象的所有操作都是原子的，因为在执行操作之前必须先获得类或对象的锁，直到执行完才能释放，这中间的过程无法被中断。
 	  logseq.order-list-type:: number
 	- 可见性：其中synchronized对一个类或对象加锁时，一个线程如果要访问该类或对象必须先获得它的锁，而这个锁的状态对于其他任何线程都是可见的，并且在释放锁之前会将 对变量的修改 刷新到主存当中，保证资源变量的可见性。
@@ -7,10 +8,10 @@
 	  logseq.order-list-type:: number
 	- 可重入性：synchronized能够支持一个线程对资源重复加锁。
 	  logseq.order-list-type:: number
-- # 用法
+- ## 用法
 	- 修饰普通方法。被修饰的方法称为同步方法，加锁的对象是调用这个方法的对象。
 	  logseq.order-list-type:: number
-	- 修饰静态方法。加锁的对象是当前类的类对象（不是指类的实例化对象，静态方法是属于类的，而不是对象的）。
+	- 修饰静态方法。加锁的对象是当前类的类对象（不是指类的实例化对象，静态方法是属于类的，而不是对象的。静态方法是存储在元空间，全局共享的）。
 	  logseq.order-list-type:: number
 	- 修饰代码块。被修饰的代码块被称为同步语句块，加锁的对象是为括号里的具体内容。
 	  logseq.order-list-type:: number
@@ -32,13 +33,13 @@
 	  //…..
 	  }
 	  ```
-- # 原理
+- ## 原理
 	- 基本原理：通过内置的监视器锁monitor实现。
 	- **monitorenter**
 		- 1. 每个对象有一个监视器锁（monitor）。当 monitor 被占用时就会处于锁定状态，线程执行 monitorenter 指令时尝试获取 monitor 的所有权，过程如下：
 		- 2. 如果 monitor 的进入数为 0，则该线程进入 monitor，然后将进入数设置为 1，该线程即为 monitor 的所有者。
 		- 3. 如果线程已经占有该 monitor，只是重新进入，则进入 monitor 的进入数加1。（可重入）
-		- 4. 如果其他线程已经占用了 monitor，则该线程进入阻塞状态，直到 monitor 的进入数为0，再重新尝试获取monitor的所有权
+		- 4. 如果其他线程已经占用了 monitor，则该线程进入阻塞状态，并进入到竞争队列中，直到 monitor 的进入数为0，再重新尝试获取monitor的所有权
 	- **monitorexit**
 		- 1. 执行 monitorexit 的线程必须是 objectref 所对应的 monitor 的所有者。
 		- 2. 指令执行时，monitor 的进入数减1，如果减1后进入数为0，那线程退出 monitor，不再是这个 monitor 的所有者。其他被这个 monitor 阻塞的线程可以尝试去获取这个 monitor 的所有权。
