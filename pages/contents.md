@@ -1,4 +1,3 @@
-- {{renderer :tocgen2, *, auto}}
 - Project
 	- [[教资考试备考]]
 	- [[2023&2024 找工作]]
