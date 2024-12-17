@@ -1033,6 +1033,7 @@ html[data-theme="dark"][data-color="logseq"] .cp__themes-installed .it:hover {
         "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
         sans-serif;
 }
-.cp__sidebar-help-btn /*右下角帮助按钮*/ {
+.cp__sidebar-help-btn /*右下角帮助按钮*/
+/* ,.cp__header /*左上角工具条*/ {
     opacity: 0;
-}
+} */
